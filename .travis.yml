@@ -3,5 +3,5 @@ language: go
 go:
   - 1.7
 
-install:
+before_install:
   - go get github.com/nimbleindustry/device
