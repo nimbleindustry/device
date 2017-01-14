@@ -8,5 +8,6 @@ go_import_path: github.com/nimbleindustry/device
 install: true
 
 script:
-  - echo ">>>>> GOPATH: ${GOPATH}"
-  
+  - go get github.com/nimbleindsutry/device 
+    && go build -o device src/github.com/nimbleindustry/device/main.go
+    
