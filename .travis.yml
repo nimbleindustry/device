@@ -6,3 +6,7 @@ go:
 go_import_path: github.com/nimbleindustry/device
 
 install: true
+
+script:
+  - echo ">>>>> GOPATH: ${GOPATH}"
+  
