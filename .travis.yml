@@ -1,7 +1,8 @@
 language: go
 
-go_import_path: github.com/nimbleindustry/device
-
 go:
   - 1.7
-  
+
+go_import_path: github.com/nimbleindustry/device
+
+install: true
