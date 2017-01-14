@@ -8,6 +8,7 @@ go_import_path: github.com/nimbleindustry/device
 install: true
 
 script:
+  - ls /home/travis/gopath/src/github.com/nimbleindustry/device
   - go get github.com/nimbleindustry/device 
     && go build -o device src/github.com/nimbleindustry/device/main.go
     
