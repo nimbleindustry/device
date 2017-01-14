@@ -10,5 +10,7 @@ install: true
 script:
   - cd $GOPATH
   - pwd
+  - ls -l
+  - ls -l src/github.com/nimbleindustry/device
   - go build -o device src/github.com/nimbleindustry/device/main.go
     
