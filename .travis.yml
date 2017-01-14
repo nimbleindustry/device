@@ -13,4 +13,7 @@ script:
   - mv oldSrc/github.com/nimbleindustry/device/src ./src
   - go get github.com/nimbleindustry/suture
   - go build -o device src/github.com/nimbleindustry/device/main.go
+  - go get github.com/stretchr/testify
+  - cd src/github.com/nimbleindustry/device
+  - go test $(go list ./... | grep -v /vendor/)
     
