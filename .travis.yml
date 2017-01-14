@@ -1,6 +1,6 @@
 language: go
 
-go_import_path: github.com/nimbleindustry/device
+go_import_path: /home/travis/gopath/src/
 
 go:
   - 1.7
