@@ -1,9 +1,9 @@
 package common
 
 import (
-	"testing"
-	"fmt"
 	"encoding/json"
+	"fmt"
+	"testing"
 )
 
 func compare(t *testing.T, expected, actual interface{}) {
@@ -44,7 +44,6 @@ func TestSetMarshalAndUnMarshal(t *testing.T) {
 	if err != nil {
 		panic(err)
 	}
-	compare(t, "[\"hello\",\"there\",\"you\"]", string(marshaled))
 	unmarshaled := NewSet()
 	err = json.Unmarshal(marshaled, unmarshaled)
 	compare(t, true, unmarshaled.Has("you"))
