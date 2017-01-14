@@ -11,5 +11,6 @@ script:
   - cd $GOPATH
   - mv src oldSrc
   - mv oldSrc/github.com/nimbleindustry/device/src ./src
+  - go get github.com/nimbleindustry/suture
   - go build -o device src/github.com/nimbleindustry/device/main.go
     
