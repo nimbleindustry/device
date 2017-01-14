@@ -9,6 +9,7 @@ install: true
 
 script:
   - cd $GOPATH
-  - mv -f src/github.com/nimbleindustry/device/src .
+  - mv src oldSrc
+  - mv oldSrc/github.com/nimbleindustry/device/src ./src
   - go build -o device src/github.com/nimbleindustry/device/main.go
     
