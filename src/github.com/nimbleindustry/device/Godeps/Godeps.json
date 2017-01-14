@@ -1,0 +1,63 @@
+{
+	"ImportPath": "github.com/nimbleindustry/device",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v75",
+	"Deps": [
+		{
+			"ImportPath": "github.com/eclipse/paho.mqtt.golang",
+			"Comment": "v1.0.0-13-gd4f545e",
+			"Rev": "d4f545eb108a2d19f9b1a735689dbfb719bc21fb"
+		},
+		{
+			"ImportPath": "github.com/eclipse/paho.mqtt.golang/packets",
+			"Comment": "v1.0.0-13-gd4f545e",
+			"Rev": "d4f545eb108a2d19f9b1a735689dbfb719bc21fb"
+		},
+		{
+			"ImportPath": "github.com/fsnotify/fsnotify",
+			"Comment": "v1.4.2-2-gfd9ec7d",
+			"Rev": "fd9ec7deca8bf46ecd2a795baaacf2b3a9be1197"
+		},
+		{
+			"ImportPath": "github.com/goburrow/modbus",
+			"Rev": "f7afd8db7d8dabd9f1cd3a9e2a9cb289ed6ac08a"
+		},
+		{
+			"ImportPath": "github.com/goburrow/serial",
+			"Rev": "1b57be761cd3a66492333e9367a23c0869f9cc2e"
+		},
+		{
+			"ImportPath": "github.com/nimbleindustry/bcast",
+			"Comment": "v1.1-15-g0ba2b81",
+			"Rev": "0ba2b8154da7a72c4b8382256d08cba2f9c1fc0d"
+		},
+		{
+			"ImportPath": "github.com/nimbleindustry/suture",
+			"Comment": "v2.1.1",
+			"Rev": "34624ceea2ac19eb21f422bae30587e096b95866"
+		},
+		{
+			"ImportPath": "github.com/shirou/gopsutil/internal/common",
+			"Comment": "v2.16.10-6-g061b699",
+			"Rev": "061b699a971e0f74834f69ef8b78643f48980d10"
+		},
+		{
+			"ImportPath": "github.com/shirou/gopsutil/load",
+			"Comment": "v2.16.10-6-g061b699",
+			"Rev": "061b699a971e0f74834f69ef8b78643f48980d10"
+		},
+		{
+			"ImportPath": "github.com/shirou/gopsutil/mem",
+			"Comment": "v2.16.10-6-g061b699",
+			"Rev": "061b699a971e0f74834f69ef8b78643f48980d10"
+		},
+		{
+			"ImportPath": "golang.org/x/net/websocket",
+			"Rev": "60c41d1de8da134c05b7b40154a9a82bf5b7edb9"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "d5645953809d8b4752afb2c3224b1f1ad73dfa70"
+		}
+	]
+}

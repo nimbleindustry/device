@@ -1,0 +1,31 @@
+{
+    "deviceId": "0d80005e",
+    "deviceState": [
+        {
+            "provider": "InitialState",
+            "protocol": "REST",
+            "providerKey": "m6XSk21RY8wHU00GHuh2NUBx2790n80o",
+            "endpoint": "https://groker.initialstate.com/api"
+        }
+    ],
+    "machineOperationsAndTelemetry": [
+        {
+            "provider": "InitialState",
+            "protocol": "REST",
+            "providerKey": "m6XSk21RY8wHU00GHuh2NUBx2790n80o",
+            "endpoint": "https://groker.initialstate.com/api"
+        },
+        {
+            "provider": "GenericMQTT",
+            "protocol": "MQTT",
+            "endpoint": "tcp://localhost:1883"
+        }
+    ],
+    "machineIntegration": [
+        {
+            "type": "modbusTCP",
+            "endpoint": "10.0.1.230",
+            "port": 502
+        }
+    ]
+}

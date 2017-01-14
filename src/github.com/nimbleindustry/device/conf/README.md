@@ -1,0 +1,1 @@
+These configuration files are used for testing in local (Mac & Win) development.

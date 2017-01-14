@@ -1,0 +1,10 @@
+{
+  "entity": "acmemanufacturing.com",
+  "type": "http://machineconfig.com/nimbleindustry.com/test-equipment-a-1.json",
+  "location": "epping",
+  "line": "lab-line",
+  "workCenter": "lab-workcenter",
+  "group": "pumping",
+  "machineId": "pump-1",
+  "description": "Lab Device 0"
+}
