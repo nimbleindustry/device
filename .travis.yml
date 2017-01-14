@@ -1,7 +1,7 @@
 language: go
 
-go_import_path: /home/travis/gopath/src/
-
 go:
   - 1.7
-  
+
+install:
+  - go get github.com/nimbleindustry/device
