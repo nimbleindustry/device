@@ -26,12 +26,12 @@ func getInstance() *bus {
 }
 
 func (bus *bus) getBusGroup(topic string) *bcast.Group {
+	bus.creationMutex.Lock()
+	defer bus.creationMutex.Unlock()
 	if group, found := bus.groupMap[topic]; found {
 		//fmt.Println("returning found group", topic)
 		return group
 	}
-	bus.creationMutex.Lock()
-	defer bus.creationMutex.Unlock()
 	group := bcast.NewGroup()
 	bus.groupMap[topic] = group
 	go group.Broadcast()
