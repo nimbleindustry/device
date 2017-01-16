@@ -4,6 +4,7 @@ NimbleIndustry: Device
 A fault-tolerant, extensible implementation of an IIoT gateway written in Go.
 
 [![Build Status](https://travis-ci.org/nimbleindustry/device.svg?branch=master)](https://travis-ci.org/nimbleindustry/device) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/nimbleindustry/device)](https://goreportcard.com/report/github.com/nimbleindustry/device)
 
 *Device* is our implemenation of an IIoT gateway. Typically IIoT gateways are deployed on/near industrial machines in order to shuttle certain [field bus](https://en.wikipedia.org/wiki/Fieldbus) messages over to modern IIoT platforms such as [Predix](https://www.predix.com/) or [SightMachine](http://sightmachine.com/). 
 
@@ -83,7 +84,7 @@ Deploying *Device* is as simple as installing the compiled image on your chosen 
 - -profile: enable remote profiling inspection via HTTP port 6789
 
 ### Configuration Files
-Three separate configuration files bind the *Device* to its installation specific—the system is configured completely using these three files.
+Three separate configuration files bind the *Device* to its specfic installation—the system is configured completely using these three files.
 
 The *config service* monitors these files and restarts affected services automatically. The files are expected to be found in ```/etc/opt/nimble``` on Linux. When running (testing) on a Mac or Windows computer, the files are expected to be in the relative, local directory named ```./conf```. Examples of these files can be seen in the ```conf``` directory that is part of this project.
 
@@ -101,13 +102,38 @@ We are building a web application (machineconfig.com) that allows equipment manu
 
 Hardware Configuration
 -------------------
+The Device can run on pretty much any hardware/OS combination (x86, ARM, Linux, Windows, OSX). We can recommend (and have tested heavily on) the [Intel NUC](http://www.intel.com/content/www/us/en/nuc/overview.html) line of headless computers running Ubuntu 14.04.
 
+IIoT Gateways often access sensor and operational data via serial communication lines or even direct-wire mechanisms. Because of this they are typically installed on or near the equipment they are monitoring. But that is definitely not a requirement.
+
+If you'd prefer to get hardware that is configured for your equipment *and* preloaded with the *Device* image directly from us, please feel free to [reach out](mailto:info@nimbleindustry.com) for more information. 
 
 Contributing
 ------------
+Contributions should follow the standard model: 
+
+	fork ➝ feature-branch ➝ pull-request 
+	
+
+Please base your pull request against our master branch and be sure to include details/reason for the change as well as the testing that was performed against the change.
 
 Roadmap
 -------
+As time allows, we're working on improvements to this project and related technology.
 
+By order of importance:
 
+- more testing
+- additional fieldbus integrations (Modbus RTU, OPC/UA, CAN bus)
+- additional IIoT platform integrations (Predix, AWS IoT, etc)
+- equipment configuration editor as an online app (machineconfig.com)
+- GPIO/ADC integrations
+- on-board data historian (maybe using InfluxDB)
+- on-board, sub-second predictions of sensor telemetry and operational data
+
+License
+-------
+To encourage contributions, especially in the form of new field bus and IIoT integrations, this project is licensed under the GNU LGPLv3. The interfaces (as defined by the license) shall be considered those "Bus" mechanisms within that allow you to add functionality specfic and not needed by general use. 
+
+In other words, if you add an OPC/UA integration, please share. If you add functionality that is specific to your company, your larger work can be distributed using different licensing terms.
 
