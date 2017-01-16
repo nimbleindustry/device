@@ -10,7 +10,7 @@ A fault-tolerant, extensible implementation of an IIoT gateway written in Go.
 
 Overview
 --------
-This project contains source for a fully functional, standalone IIoT gateway. *Device* is typically deployed on a Linux-based headless computer (we like, and have tested on, the Intel NUC line outfitted with Ubuntu). The job of any IIoT gateway is to allow the transfer of operational data and sensor telemetry from industrial equipment to IIoT platforms. This project abides by providing access to one or more field bus networks such as Modbus as well as access to one or more IIoT platforms.
+This project contains source for a fully functional, standalone IIoT gateway. *Device* is typically deployed on a Linux-based headless computer (we like, and have tested on, the Intel NUC line outfitted with Ubuntu). The job of any IIoT gateway is to allow the transfer of operational data and sensor telemetry from industrial equipment to IIoT platforms. This project abides by providing the means to access one or more field bus networks such as Modbus; then automagically forwarding that data to one or more IIoT platforms.
 
 #### Field Bus Integration
 - Modbus TCP
@@ -29,7 +29,7 @@ This project contains source for a fully functional, standalone IIoT gateway. *D
 
 
 ### Fault Tolerance
-Industrial settings are inhospital places for computers. *Device* aims to be highly fault-tolerant. For instance if the serial connection to a fieldbus interface is interrupted, *Device* gracefully attempts to reconnect and uses exponential backoff techniques in respect of system resources. Other fieldbus or IIoT connections would be unaffected.
+Industrial settings are inhospitable places for computers. *Device* aims to be highly fault-tolerant. For instance if the serial connection to a field bus interface is interrupted, *Device* gracefully attempts to reconnect and uses exponential backoff techniques in respect of system resources. In this example, other field bus or IIoT connections would be unaffected.
 
 Device uses a hierarchical services architecture based on [supervisor trees](https://github.com/nimbleindustry/suture).
 
@@ -39,14 +39,12 @@ Want to add your field bus or IIoT system? This project is specifically designed
 ### Simplicity
 *Device* is written in golang. Once built, the binary image has no external dependencies and can run on a Linux computer as a defined service. The design employs concurrency yet consumes a minimum of system resources. For instance, in our lab an outfitted Intel NUC running *Device* which is attached to a Modbus-based PLC and the Initial State service and an MQTT broker (Mosquitto) has been running for months with 100% uptime.
 
-Built-in diagnostics are available (sampled profiling) to allow monitoring of system resource consumption.
+The Device image contains available built-in diagnostics (sampled profiling) to allow monitoring of system resource consumption. The Device also supports reporting of its own state to IIoT integrations.
   
 
 Building
 --------
-Requirements
-
-- go, version 1.6 or better (Note, this project uses golang *vendoring* for its external dependencies and these dependencies are committed to this repo).
+The only requirement is [go](https://golang.org), version 1.6 or better (Note, this project uses golang *vendoring* for its external dependencies and these dependencies are committed to this repo).
 
 ```bash
 $ git clone http://github.com/nimbleindustry/device
@@ -84,7 +82,7 @@ Deploying *Device* is as simple as installing the compiled image on your chosen 
 - -profile: enable remote profiling inspection via HTTP port 6789
 
 ### Configuration Files
-Three separate configuration files bind the *Device* to its specfic installation—the system is configured completely using these three files.
+Three separate configuration files bind the *Device* to its specfic installation—the system is configured completely using these files.
 
 The *config service* monitors these files and restarts affected services automatically. The files are expected to be found in ```/etc/opt/nimble``` on Linux. When running (testing) on a Mac or Windows computer, the files are expected to be in the relative, local directory named ```./conf```. Examples of these files can be seen in the ```conf``` directory that is part of this project.
 
@@ -94,7 +92,7 @@ The *config service* monitors these files and restarts affected services automat
 We are building a web application (machineconfig.com) that allows equipment manufacturers to edit, store and manage their equipment configurations in a centralized repository.
 
 ##### Asset Configuration
-```asset.json``` identifies a piece of equipment in place. This file contains information such as the equipment identifier (e.g. robot9), the entity (the company using the equipment), the class of equipment (see above), and the assembly line the equipment.
+```asset.json``` identifies a piece of equipment in place. This file contains information such as the equipment identifier (e.g. robot9), the entity (the company using the equipment), the class of equipment (see above), and, for example, the assembly line in which the equipment is operating.
 
 ##### Connections Configuration
 ```connections.json``` defines the field bus and IIoT integrations that the Device should attempt to manage along with the endpoints and relevant connection access keys (if applicable).
@@ -110,7 +108,7 @@ If you'd prefer to get hardware that is configured for your equipment *and* prel
 
 Contributing
 ------------
-Contributions should follow the standard model: 
+Contributions to this project should follow the standard git model: 
 
 	fork ➝ feature-branch ➝ pull-request 
 	
@@ -119,17 +117,16 @@ Please base your pull request against our master branch and be sure to include d
 
 Roadmap
 -------
-As time allows, we're working on improvements to this project and related technology.
-
-By order of importance:
+As time allows, we're working on improvements to this project and related technology by order of importance:
 
 - more testing
+- json schemas for configuration files
 - additional fieldbus integrations (Modbus RTU, OPC/UA, CAN bus)
 - additional IIoT platform integrations (Predix, AWS IoT, etc)
-- equipment configuration editor as an online app (machineconfig.com)
+- equipment configuration editor (for equipment manufacturers and integrators) as an online app at http://machineconfig.com
 - GPIO/ADC integrations
-- on-board data historian (maybe using InfluxDB)
-- on-board, sub-second predictions of sensor telemetry and operational data
+- onboard data historian (maybe using InfluxDB)
+- onboard, sub-second predictions of sensor telemetry and operational data
 
 License
 -------

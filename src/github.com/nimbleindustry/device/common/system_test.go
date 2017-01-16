@@ -3,21 +3,21 @@ package common
 import "testing"
 
 func TestDiskConsumed(t *testing.T) {
-	consumed := SystemDiskConsumed()
+	consumed := systemDiskConsumed()
 	if consumed == 0.0 {
 		t.Fail()
 	}
 }
 
 func TestMemoryConsumed(t *testing.T) {
-	consumed := SystemMemoryConsumed()
+	consumed := systemMemoryConsumed()
 	if consumed == 0.0 {
 		t.Fail()
 	}
 }
 
 func TestSystemLoad(t *testing.T) {
-	load := SystemLoadAverage()
+	load := systemLoadAverage()
 	if load == 0.0 {
 		t.Fail()
 	}

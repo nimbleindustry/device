@@ -12,7 +12,7 @@ func TestLoadModbusTCPDefinitions(t *testing.T) {
 	err := json.Unmarshal([]byte(connectionFixture1), &connections)
 	assert.Nil(t, err, "unmarshall failed")
 	record := connections.GetMachineConnection(ModbusTCP)
-	assert.NotEmpty(t, record.Type, "Expected to find non-emtpy modbusTCP entry")
+	assert.NotEmpty(t, record.Type, "Expected to find non-empty modbusTCP entry")
 }
 
 func TestUnfoundConnectionDefinitions(t *testing.T) {

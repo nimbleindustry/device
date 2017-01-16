@@ -2,14 +2,12 @@ package common
 
 import (
 	"encoding/json"
-	"fmt"
 	"testing"
 )
 
 func compare(t *testing.T, expected, actual interface{}) {
 	if expected != actual {
 		t.Errorf("value differs. Expected [%v], actual [%v]", expected, actual)
-		panic(fmt.Sprintf("value differs. Expected [%v], actual [%v]", expected, actual))
 	}
 }
 
@@ -42,9 +40,12 @@ func TestSetMarshalAndUnMarshal(t *testing.T) {
 	compare(t, true, set.Has("you"))
 	marshaled, err := json.Marshal(set)
 	if err != nil {
-		panic(err)
+		t.Fail()
 	}
 	unmarshaled := NewSet()
 	err = json.Unmarshal(marshaled, unmarshaled)
+	if err != nil {
+		t.Fail()
+	}
 	compare(t, true, unmarshaled.Has("you"))
 }
