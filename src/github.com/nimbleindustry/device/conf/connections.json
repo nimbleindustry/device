@@ -4,7 +4,7 @@
         {
             "provider": "InitialState",
             "protocol": "REST",
-            "providerKey": "m6XSk21RY8wHU00GHuh2NUBx2790n80o",
+            "providerKey": "USE_YOUR_PROVIDER_KEY_HERE",
             "endpoint": "https://groker.initialstate.com/api"
         }
     ],
@@ -12,7 +12,7 @@
         {
             "provider": "InitialState",
             "protocol": "REST",
-            "providerKey": "m6XSk21RY8wHU00GHuh2NUBx2790n80o",
+            "providerKey": "USE_YOUR_PROVIDER_KEY_HERE",
             "endpoint": "https://groker.initialstate.com/api"
         },
         {
